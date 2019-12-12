@@ -1,0 +1,261 @@
+// Write your styles here
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Hind', sans-serif;
+}
+
+@mixin button {
+    font-family: 'Hind', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    background-color: $button_color;
+    border: none;
+    border-radius: 3px;
+    color: rgb(242, 243, 247);
+    padding: 7px 33px;
+}
+
+@mixin link {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(242, 243, 247);
+}
+
+@mixin highlight($color, $width, $hight, $x, $y) {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background-color: $color;
+    width: $width;
+    height: $hight;
+    right: $x;
+    top: $y;
+}
+
+body {
+    background-color: $main_background;
+}
+
+header {
+    height: 540px;
+    background-image: $background_image;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom-right-radius: 40%;
+
+    .header-wrap {
+        margin-left: 145px;
+        margin-right: 190px;
+        padding-top: 17px;
+
+        .header_heading {
+            position: relative;
+            z-index: 1;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 52px;
+            width: 500px;
+            color: $text_color;
+            font-weight: 700;
+            padding-top: 60px;
+            line-height: 55px;
+            letter-spacing: 1px;
+
+            &::before {
+                @include highlight($highlight_color, 225px, 40px, 275px, 130px)
+            }
+        }
+
+        .header_text {
+            color: $text_color;
+            font-family: $p_fonts;
+            margin-top: 40px;
+            font-size: 12px;
+            width: 500px;
+            line-height: 17px;
+            letter-spacing: 1px;
+        }
+
+        .header_button {
+            @include button();
+            margin-top: 48px;
+
+        }
+
+        .login {
+            padding-left: 110px;
+            @include link();
+        }
+    }
+
+}
+
+.landing-logo {
+    display: flex;
+
+    img {
+        height: 33px;
+        width: 33px;
+    }
+
+    p {
+        font-family: 'Hind', sans-serif;
+        color: $text_color;
+        font-size: 16px;
+        margin-left: 10px;
+        text-align: center;
+        letter-spacing: 2px;
+
+        span {
+            display: block;
+            font-size: 7px;
+            line-height: 5px;
+            letter-spacing: initial;
+        }
+    }
+}
+
+.section {
+    position: relative;
+
+    .section_text {
+        position: relative;
+        z-index: 1;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 33px;
+        margin-top: 25px;
+        text-align: center;
+
+        &::before {
+            @include highlight($highlight_color, 145px, 40px, 568px, 0px)
+        }
+    }
+
+
+
+    .section_card_wrap {
+        margin-top: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 163px;
+
+        .section_card {
+            display: flex;
+            border-radius: 5px;
+            width: 835px;
+            height: 245px;
+            background-color: $card_background;
+            margin-top: 20px;
+            align-items: center;
+
+            .section_card_img {
+                flex: 2 1 320px;
+                height: 220px;
+                margin-left: 15px;
+                border-radius: 5px;
+                flex-grow: 1;
+            }
+
+            .section_card_right_container {
+                flex: 1 2 500px;
+                padding-left: 60px;
+                padding-right: 60px;
+                color: white;
+
+                .section_card_heading {
+                    font-family: 'Source Sans Pro', sans-serif;
+                    text-align: center;
+                    margin-bottom: 30px;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+
+                .section_card_text {
+                    font-family: $p_fonts;
+                    margin-bottom: 30px;
+                    text-align: start;
+                    font-size: 12px;
+                    color: rgb(242, 243, 247);
+                }
+
+                .section_link {
+
+                    text-align: center;
+                    display: block;
+                    @include link();
+                }
+            }
+        }
+    }
+}
+
+.section_banner {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 5px;
+    height: 110px;
+    width: 900px;
+    bottom: -220px;
+    background: $banner_gradient;
+
+    &_heading {
+        position: relative;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 20px;
+        margin-bottom: 15px;
+        font-weight: 600;
+        color: rgb(40, 43, 57);
+        z-index: 1;
+
+        &::before {
+            @include highlight($highlight_color, 43px, 20px, 143px, 3px)
+        }
+    }
+
+    &_text {
+        font-family: $p_fonts;
+        font-size: 10px;
+        color: rgb(242, 243, 247);
+    }
+
+    &_button {
+        @include button();
+    }
+}
+
+footer {
+    height: 200px;
+    padding-top: 100px;
+    color: $text_color;
+    background-color: $card_background;
+
+    .footer-wrap {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        p {
+            font-family: $p_fonts;
+            color: rgb(242, 243, 247);
+        }
+
+        .footer_text {
+            width: 200px;
+            font-size: 10px;
+            color: rgb(242, 243, 247);
+        }
+
+        .footer-cr {
+            @extend .footer_text;
+            width: auto;
+        }
+    }
+}
