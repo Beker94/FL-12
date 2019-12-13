@@ -10,7 +10,7 @@
     font-family: 'Hind', sans-serif;
     font-size: 13px;
     font-weight: 600;
-    background-color: $button_color;
+    background-color: $buttonColor;
     border: none;
     border-radius: 3px;
     color: rgb(242, 243, 247);
@@ -34,12 +34,12 @@
 }
 
 body {
-    background-color: $main_background;
+    background-color: $mainBackground;
 }
 
 header {
     height: 540px;
-    background-image: $background_image;
+    background-image: $backgroundImage;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -56,20 +56,20 @@ header {
             font-family: 'Source Sans Pro', sans-serif;
             font-size: 52px;
             width: 500px;
-            color: $text_color;
+            color: $textColor;
             font-weight: 700;
             padding-top: 60px;
             line-height: 55px;
             letter-spacing: 1px;
 
             &::before {
-                @include highlight($highlight_color, 225px, 40px, 275px, 130px)
+                @include highlight($highlightColor, 225px, 40px, 275px, 130px)
             }
         }
 
         .header_text {
-            color: $text_color;
-            font-family: $p_fonts;
+            color: $textColor;
+            font-family: $textFonts;
             margin-top: 40px;
             font-size: 12px;
             width: 500px;
@@ -101,7 +101,7 @@ header {
 
     p {
         font-family: 'Hind', sans-serif;
-        color: $text_color;
+        color: $textColor;
         font-size: 16px;
         margin-left: 10px;
         text-align: center;
@@ -128,7 +128,7 @@ header {
         text-align: center;
 
         &::before {
-            @include highlight($highlight_color, 145px, 40px, 568px, 0px)
+            @include highlight($highlightColor, 145px, 40px, 568px, 0px)
         }
     }
 
@@ -147,7 +147,7 @@ header {
             border-radius: 5px;
             width: 835px;
             height: 245px;
-            background-color: $card_background;
+            background-color: $cardBackground;
             margin-top: 20px;
             align-items: center;
 
@@ -174,7 +174,7 @@ header {
                 }
 
                 .section_card_text {
-                    font-family: $p_fonts;
+                    font-family: $textFonts;
                     margin-bottom: 30px;
                     text-align: start;
                     font-size: 12px;
@@ -204,7 +204,7 @@ header {
     height: 110px;
     width: 900px;
     bottom: -220px;
-    background: $banner_gradient;
+    background: $bannerGradient;
 
     &_heading {
         position: relative;
@@ -216,12 +216,12 @@ header {
         z-index: 1;
 
         &::before {
-            @include highlight($highlight_color, 43px, 20px, 143px, 3px)
+            @include highlight($highlightColor, 43px, 20px, 143px, 3px)
         }
     }
 
     &_text {
-        font-family: $p_fonts;
+        font-family: $textFonts;
         font-size: 10px;
         color: rgb(242, 243, 247);
     }
@@ -234,8 +234,8 @@ header {
 footer {
     height: 200px;
     padding-top: 100px;
-    color: $text_color;
-    background-color: $card_background;
+    color: $textColor;
+    background-color: $cardBackground;
 
     .footer-wrap {
         display: flex;
@@ -243,7 +243,7 @@ footer {
         align-items: center;
 
         p {
-            font-family: $p_fonts;
+            font-family: $textFonts;
             color: rgb(242, 243, 247);
         }
 
