@@ -1,5 +1,5 @@
 let email = prompt('Enter your email');
-let password, result, oldpassword, newpassword1,newpassword2;
+let password, result, oldPassword, newPassword1,newPassword2;
 const users = {
     'user@gmail.com': 'UserPass',
     'admin@gmail.com': 'AdminPass'
@@ -19,19 +19,19 @@ if (password === '' || undefined) {
 } else if (password === users[email]) {
     result = confirm('Hello.Do you want to change your password?');
     if (result) {
-        oldpassword = prompt('write the oldpassword password');
-        if (oldpassword === '' || oldpassword === undefined || oldpassword !== password) {
+        oldPassword = prompt('write the oldPassword password');
+        if (oldPassword === '' || oldPassword === undefined || oldPassword !== password) {
             alert('Canceled.');
         } else {
-            newpassword1 = prompt('enter new password');
+            newPassword1 = prompt('enter new password');
         }
-        if (newpassword1.length < 6) {
+        if (newPassword1.length < 6) {
             alert('It’s too short password. Sorry.')
         } else {
-            newpassword2 = prompt('enter it again');
+            newPassword2 = prompt('enter it again');
         }
-        if (newpassword2 === newpassword1) {
-            users[email] = newpassword2;
+        if (newPassword2 === newPassword1) {
+            users[email] = newPassword2;
             alert('You have successfully changed your password.')
         } else {
             alert('You wrote the wrong password.')
