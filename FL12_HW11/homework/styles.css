@@ -1,0 +1,39 @@
+.item,
+.item-empty {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.item:hover {
+    background-color: rgba(128, 128, 128, 0.219);
+}
+
+.item-empty {
+    font-style: italic;
+}
+
+.nested {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+p {
+    display: inline;
+}
+
+.folder-icons {
+    color: #edbc0b;
+    font-size: 25px;
+    font-family: 'Material Icons';
+}
+
+.file-icons {
+    color: rgba(128, 128, 128, 0.623);
+    font-size: 25px;
+    font-family: 'Material Icons';
+}
