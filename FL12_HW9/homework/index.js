@@ -25,6 +25,8 @@ const mapArray = (arr, callback) => {
     return newArr;
 }
 
+
+
 const filterArray = (arr, callback) => {
     let newArr = [];
     executeforEach(arr, function (el) {

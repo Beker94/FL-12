@@ -1,0 +1,81 @@
+@import "/styles/variables.less";
+
+.header {
+    border-bottom: rgba(0, 0, 0, .1) solid 1px;
+    background-color: #f8f9fa;
+
+    .active {
+        background-color: @blue;
+
+        .nav-link {
+            color: white !important;
+        }
+
+    }
+
+}
+
+.title {
+    color: @blue;
+    border-bottom: 1px solid @blue;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+
+.main-content {
+    &__title {
+        color: @blue;
+    }
+}
+
+.cards {
+    &__title {
+        color: white;
+        text-align: center;
+        padding: 8px 0;
+    }
+
+    &__title--red {
+        background-color: @red;
+    }
+
+    &__img--red {
+        border: 1px solid @red;
+    }
+
+    &__title--blue {
+        background-color: @blue;
+    }
+
+    &__img--blue {
+        border: 1px solid @blue;
+    }
+
+    &__title--orange {
+        background-color: @orange;
+    }
+
+    &__img--orange {
+        border: 1px solid @orange;
+    }
+
+    &__title--green {
+        background-color: @green;
+    }
+
+    &__img--green {
+        border: 1px solid @green;
+    }
+}
+
+.footer {
+    margin-top: 30px;
+
+    &__copy {
+        background-color: @grey;
+        margin-bottom: 0;
+        padding: 5px 0 5px 20px;
+        color: white;
+    }
+}
