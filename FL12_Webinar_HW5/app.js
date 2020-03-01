@@ -1,4 +1,4 @@
-let post = [];
+let users = [];
 let url = "https://jsonplaceholder.typicode.com/users"
 
 mainPage();
@@ -17,42 +17,20 @@ function mainPage() {
         .then(response => response.json())
         .then(json => {
             json.forEach(user => {
-                let person = new User(user);
-                show(person);
-                post.push(user);
+                show(user);
+                users.push(user);
             })
             let buttonDel = document.querySelectorAll('.del');
             let buttonEdit = document.querySelectorAll('.edit');
             let person = document.querySelectorAll('.person');
             for (let i = 0; i < buttonDel.length; i++) {
-                buttonDel[i].addEventListener('click', remove.bind(post[i]));
-                buttonEdit[i].addEventListener('click', edit.bind(post[i]));
-                person[i].addEventListener('click', userPosts.bind(post[i]));
+                buttonDel[i].addEventListener('click', remove.bind(users[i]));
+                buttonEdit[i].addEventListener('click', edit.bind(users[i]));
+                person[i].addEventListener('click', userPosts.bind(users[i]));
             }
             delSpiner();
         })
 }
-
-class User {
-    constructor(user) {
-        this.id = user.id,
-            this.name = user.name,
-            this.username = user.username,
-            this.email = user.email,
-            this.phone = user.phone,
-            this.company = user.company
-    }
-}
-
-class Post {
-    constructor(post) {
-        this.userId = post.userId,
-            this.id = post.id,
-            this.title = post.title,
-            this.body = post.body
-    }
-}
-
 
 const show = (post) => {
     let root = document.getElementById('root');
@@ -83,7 +61,6 @@ function remove(e) {
         .then(() => {
             delSpiner();
             card.remove();
-            post.splice(this.id - 1, 1)
         })
 }
 
@@ -106,7 +83,6 @@ function edit(e) {
         })
         .then(() => {
             delSpiner();
-            post[this.id - 1] = this
         })
 }
 
@@ -129,12 +105,10 @@ function userPosts() {
             let root = document.getElementById('root');
             root.innerHTML = ''
             json.forEach(elem => {
-                posts(new Post(elem))
+                posts(elem)
             });
-            delSpiner();
         })
 }
-
 
 function posts(post) {
     let root = document.getElementById('root');
@@ -149,7 +123,6 @@ function posts(post) {
     comments(post.id);
 }
 
-
 function comments(id) {
     fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
         .then(response => response.json())
@@ -163,5 +136,6 @@ function comments(id) {
             <p>email:<span>${elem.email}</span></p>
             <p>body:<span>${elem.body}</span></p>`
             post.append(comment);
+            delSpiner();
         }))
 }
